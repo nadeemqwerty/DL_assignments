@@ -1,0 +1,51 @@
+README for assignment1
+
+1)
+ABOUT
+It contains a file a1.py,
+a1.py is the file for generating the 96 classes of images containing lines satisfying the stated conditions for this question.
+
+PREREQUISITES
+
+To load a1.py python3 should be installed on your system.
+
+USAGE
+Open your terminal and run the following command
+python3 a1.py
+
+2)
+ABOUT
+It contains one file q2.py 
+First tried using simple sequential execution of a python code to simulate a 2D gravitational force modelling on 100 particles until the distance between any 2 particles falls below a threshold.
+the first one converges in 330 iterations,second one using tensorflow computational graph for the same model converged in 16 iterations resulting in a better performance.
+
+PREREQUISITES
+
+To load a1.py python3 should be installed on your system.
+
+USAGE
+Open your terminal and run the following command
+python3 q2.py
+
+
+3)
+ABOUT
+It contains the required code.
+for the line dataset
+for this dataset we first converted it to grayscale image and then flattened it to 1d array.
+the layer sizes taken respectively starting from inner layer towards outwards were 784 128 64 10 and in between the layers we applied activation sigmoid.
+firstly the input we considered images of size 28*28 are reshaped to 1-dimensional vector of size 784 and the output layer is of size 10.
+we tried to keep the number of layers variant by sometimes trying 1 layer,sometimes 2 in order to get a desirable accuracy.
+we also used to vary the activation function by applying linear activation function and sigmoid activation function.
+we also introduced a new parameter of learning rate which ranged from 0.01 to 1.
+
+for the mnist dataset
+the procedure followed for this dataset was exactly same as the line dataset and the variants followed were also the same as above.
+there is layer class inside neuron.py which is inherited by sigmoid class inside neuron.py
+
+USAGE
+python3 mnist.py
+python3 line-class.py
+python3 neuron.py 
+
+
