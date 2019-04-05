@@ -88,5 +88,5 @@ model.compile(optimizer='adam',
 model.load_weights(weight_dir + "line_2_final.h5")
 
 
-img  = cv2 .imread("xyz.jpg")
+img  = cv2.imread("xyz.jpg")
 img   = resize(img, (28,28))
