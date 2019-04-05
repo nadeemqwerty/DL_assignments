@@ -12,6 +12,26 @@ import keras.backend as K
 from keras.backend import tf as ktf
 
 
+# dim  = (28,28)
+def resize(img, dim, aspectRatio = True):
+    if aspectRatio:
+        old_size = img.shape[:2]
+        ratio = min(float(dim[0])/float(img.shape[0]), float(dim[1])/float(img.shape[1]))
+        d1 = int(img.shape[1]*ratio)
+        d0 = int(img.shape[0]*ratio)
+        img = cv2.resize(img, (d1,d0) )
+
+        delta_w = dim[1] - d1
+        delta_h = dim[0] - d0
+        top, bottom = delta_h//2, delta_h-(delta_h//2)
+        left, right = delta_w//2, delta_w-(delta_w//2)
+
+        color = [0, 0, 0]
+        new_im = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT, value=color)
+        return new_im
+    return cv2.resize(img, (dim[1],dim[0]))
+
+
 weight_dir = "../q2/weight/"
 
 def inception_block(x, filters):
