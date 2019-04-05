@@ -86,3 +86,7 @@ model.compile(optimizer='adam',
 
 # history = model.fit(x_train, [y_train_length, y_train_width, y_train_color, y_train_angle], epochs=epochs, batch_size=batch_size, shuffle=True,verbose=1)
 model.load_weights(weight_dir + "line_2_final.h5")
+
+
+img  = cv2 .imread("xyz.jpg")
+img   = resize(img, (28,28))
